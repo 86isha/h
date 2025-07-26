@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Company Homepage</title>
+  <!-- Tailwind CSS via CDN (for actual use, include Tailwind compiled CSS) -->
+  <script src="https://cdn.tailwindcss.com"></script>
+</head>
+<body class="antialiased text-gray-800">
+  <!-- Navigation -->
+  <header class="bg-white fixed w-full top-0 z-50 shadow-sm">
+    <nav class="container mx-auto px-4 py-4 flex items-center justify-between">
+      <!-- Logo -->
+      <a href="/" class="text-2xl font-bold text-gray-900">CompanyName</a>
+      <!-- Nav Links (desktop) -->
+      <ul class="hidden md:flex space-x-6 text-gray-700">
+        <li><a href="/" class="hover:text-blue-600">Home</a></li>
+        <li><a href="#services" class="hover:text-blue-600">Services</a></li>
+        <li><a href="#case-studies" class="hover:text-blue-600">Case Studies</a></li>
+        <li><a href="#blog" class="hover:text-blue-600">Blog</a></li>
+        <li><a href="#about" class="hover:text-blue-600">About</a></li>
+        <li><a href="#contact" class="hover:text-blue-600">Contact</a></li>
+      </ul>
+      <!-- CTA Button (desktop) -->
+      <a href="#contact" class="hidden md:inline-block bg-blue-600 text-white font-semibold py-2 px-4 rounded-lg hover:bg-blue-700">
+        Get Started
+      </a>
+      <!-- Mobile Menu Button -->
+      <button id="menuBtn" class="md:hidden focus:outline-none">
+        <!-- Hamburger Icon -->
+        <svg xmlns="http://www.w3.org/2000/svg" class="h-6 w-6 text-gray-900" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+          <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+            d="M4 6h16M4 12h16M4 18h16" />
+        </svg>
+      </button>
+    </nav>
+    <!-- Mobile Menu (hidden by default, toggled via JS) -->
+    <div id="mobileMenu" class="md:hidden bg-white border-t border-gray-200 hidden">
+      <ul class="px-4 py-4 space-y-2">
+        <li><a href="/" class="block text-gray-700 hover:text-blue-600">Home</a></li>
+        <li><a href="#services" class="block text-gray-700 hover:text-blue-600">Services</a></li>
+        <li><a href="#case-studies" class="block text-gray-700 hover:text-blue-600">Case Studies</a></li>
+        <li><a href="#blog" class="block text-gray-700 hover:text-blue-600">Blog</a></li>
+        <li><a href="#about" class="block text-gray-700 hover:text-blue-600">About</a></li>
+        <li><a href="#contact" class="block text-gray-700 hover:text-blue-600">Contact</a></li>
+      </ul>
+    </div>
+  </header>
+
+  <!-- Hero Section -->
+  <section class="relative bg-black text-white" style="margin-top: 64px;">  <!-- margin-top to offset fixed header -->
+    <!-- Background Video -->
+    <video class="absolute inset-0 w-full h-full object-cover" autoplay muted loop playsinline>
+      <source src="hero-video.mp4" type="video/mp4" />
+      <!-- Add a WebM source for wider support -->
+      <source src="hero-video.webm" type="video/webm" />
+    </video>
+    <!-- Overlay for darkening the video -->
+    <div class="absolute inset-0 bg-black opacity-50"></div>
+    <!-- Hero Text Content -->
+    <div class="relative z-10 container mx-auto px-4 py-32 text-center flex flex-col items-center justify-center">
+      <h1 class="text-4xl md:text-5xl font-bold mb-4">Empower Your Business with Software, Marketing & Cloud Solutions</h1>
+      <p class="text-lg md:text-2xl mb-8">Innovative development, data-driven marketing, and scalable cloud infrastructure – all under one roof.</p>
+      <a href="#contact" class="bg-blue-600 hover:bg-blue-700 text-white font-semibold py-3 px-6 rounded-lg text-lg">
+        Request a Free Consultation
+      </a>
+    </div>
+  </section>
+
+  <!-- Services Section -->
+  <section id="services" class="py-16 bg-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-8">Our Services</h2>
+      <div class="grid gap-8 md:grid-cols-3">
+        <!-- Service 1: Software Development -->
+        <div class="p-6 bg-gray-50 rounded-lg shadow hover:shadow-md transition">
+          <div class="mb-4 text-blue-600">
+            <!-- Icon (e.g., code or laptop icon) -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3 4a1 1 0 011-1h16a1 1 0 011 1v16h-6m-2 0h-8a1 1 0 01-1-1V4z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Software Development</h3>
+          <p class="text-gray-700 mb-4">Custom web and mobile applications tailored to your business needs, using modern technologies for scalable solutions.</p>
+          <a href="/services/software-development" class="text-blue-600 font-medium hover:underline">Learn More →</a>
+        </div>
+        <!-- Service 2: Marketing Services -->
+        <div class="p-6 bg-gray-50 rounded-lg shadow hover:shadow-md transition">
+          <div class="mb-4 text-blue-600">
+            <!-- Icon (e.g., marketing/analytics icon) -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M11 11V3H3v8h8zm0 10v-8H3v8h8zm10-10V3h-8v8h8zm0 10v-8h-8v8h8z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Marketing Services</h3>
+          <p class="text-gray-700 mb-4">Data-driven digital marketing – SEO, PPC, content and social media strategies that drive traffic and conversions.</p>
+          <a href="/services/marketing" class="text-blue-600 font-medium hover:underline">Learn More →</a>
+        </div>
+        <!-- Service 3: Cloud Services -->
+        <div class="p-6 bg-gray-50 rounded-lg shadow hover:shadow-md transition">
+          <div class="mb-4 text-blue-600">
+            <!-- Icon (e.g., cloud server icon) -->
+            <svg xmlns="http://www.w3.org/2000/svg" class="w-12 h-12 mx-auto" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+              <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2"
+                d="M3 15a4 4 0 014-4h1a4 4 0 010 8h-1a4 4 0 01-4-4zM21 15a4 4 0 01-4 4h-1a4 4 0 010-8h1a4 4 0 014 4z" />
+            </svg>
+          </div>
+          <h3 class="text-xl font-semibold mb-2">Cloud Services</h3>
+          <p class="text-gray-700 mb-4">Secure cloud infrastructure and DevOps solutions to deploy, scale, and maintain your applications with ease.</p>
+          <a href="/services/cloud" class="text-blue-600 font-medium hover:underline">Learn More →</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- About/Why Choose Us Section -->
+  <section id="about" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4 md:flex md:items-center">
+      <!-- About text/content -->
+      <div class="md:w-1/2 md:pr-8">
+        <h2 class="text-3xl font-bold mb-4">Why Choose Our Team?</h2>
+        <p class="text-gray-700 mb-6">We are a one-stop partner for development, marketing, and cloud. Our team brings together seasoned software engineers, creative marketers, and certified cloud architects to deliver holistic solutions. We focus on understanding your business goals and crafting strategies that drive real results.</p>
+        <ul class="space-y-4 text-gray-800">
+          <li class="flex items-start"><svg class="w-6 h-6 text-green-500 flex-shrink-0 mr-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 00-1.414 0L8 12.586 5.707 10.293a1 1 0 00-1.414 1.414l3 3 
+                  a1 1 0 001.414 0l8-8a1 1 0 000-1.414z" clip-rule="evenodd"/></svg>
+            <span>10+ years of industry experience</span></li>
+          <li class="flex items-start"><svg class="w-6 h-6 text-green-500 flex-shrink-0 mr-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 00-1.414 0L8 12.586 5.707 10.293a1 1 
+                  0 00-1.414 1.414l3 3a1 1 0 001.414 0l8-8a1 1 0 000-1.414z" clip-rule="evenodd"/></svg>
+            <span>Certified experts (AWS, Google, PMP)</span></li>
+          <li class="flex items-start"><svg class="w-6 h-6 text-green-500 flex-shrink-0 mr-3" fill="currentColor" viewBox="0 0 20 20"><path fill-rule="evenodd" d="M16.707 5.293a1 1 0 
+                  00-1.414 0L8 12.586 5.707 10.293a1 1 0 00-1.414 1.414l3 3a1 1 0 001.414 0l8-8a1 1 0 
+                  000-1.414z" clip-rule="evenodd"/></svg>
+            <span>Client-first approach & long-term support</span></li>
+        </ul>
+      </div>
+      <!-- Team/Office Image -->
+      <div class="md:w-1/2 mt-8 md:mt-0">
+        <img src="team.jpg" alt="Our Team" class="w-full rounded-lg shadow-md">
+      </div>
+    </div>
+  </section>
+
+  <!-- Case Studies Section (Optional) -->
+  <section id="case-studies" class="py-16 bg-white">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-8">Case Studies</h2>
+      <div class="grid gap-4 md:grid-cols-3">
+        <!-- Project 1 -->
+        <div class="relative group overflow-hidden rounded-lg shadow">
+          <img src="project1.jpg" alt="Project 1" class="w-full h-48 object-cover transform group-hover:scale-105 transition">
+          <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+            <span class="text-white text-lg font-semibold">Project Name 1</span>
+          </div>
+        </div>
+        <!-- Project 2 -->
+        <div class="relative group overflow-hidden rounded-lg shadow">
+          <img src="project2.jpg" alt="Project 2" class="w-full h-48 object-cover transform group-hover:scale-105 transition">
+          <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+            <span class="text-white text-lg font-semibold">Project Name 2</span>
+          </div>
+        </div>
+        <!-- Project 3 -->
+        <div class="relative group overflow-hidden rounded-lg shadow">
+          <img src="project3.jpg" alt="Project 3" class="w-full h-48 object-cover transform group-hover:scale-105 transition">
+          <div class="absolute inset-0 bg-black bg-opacity-50 flex items-center justify-center opacity-0 group-hover:opacity-100 transition">
+            <span class="text-white text-lg font-semibold">Project Name 3</span>
+          </div>
+        </div>
+      </div>
+      <!-- Link to more case studies -->
+      <a href="/case-studies" class="inline-block mt-6 text-blue-600 font-medium hover:underline">View All Projects</a>
+    </div>
+  </section>
+
+  <!-- Testimonials Section -->
+  <section id="testimonials" class="py-16 bg-gray-50">
+    <div class="container mx-auto px-4 text-center">
+      <h2 class="text-3xl font-bold mb-8">Testimonials</h2>
+      <!-- Testimonial Carousel (here just a single static quote for example) -->
+      <div class="max-w-xl mx-auto">
+        <blockquote class="text-xl italic text-gray-800 mb-4">"Working with CompanyName was a game changer. Their team helped us triple our online leads with a new app and marketing strategy."</blockquote>
+        <p class="text-gray-600 font-semibold">– Jane Doe, CEO of ClientCorp</p>
+      </div>
+      <!-- If multiple testimonials, dots or arrows can go here for navigation -->
+    </div>
+  </section>
+
+  <!-- Blog Preview Section (Optional) -->
+  <section id="blog" class="py-16 bg-white">
+    <div class="container mx-auto px-4">
+      <h2 class="text-3xl font-bold text-center mb-8">From Our Blog</h2>
+      <div class="grid gap-8 md:grid-cols-3">
+        <!-- Post 1 -->
+        <div class="bg-gray-50 rounded-lg overflow-hidden shadow hover:shadow-md transition">
+          <img src="blog1.jpg" alt="Blog post 1" class="w-full h-40 object-cover">
+          <div class="p-4 text-left">
+            <h3 class="text-xl font-semibold mb-2">Blog Post Title One</h3>
+            <p class="text-gray-700 mb-4">Short excerpt from the blog post goes here to entice readers to click through and read the full article...</p>
+            <a href="/blog/post1" class="text-blue-600 font-medium hover:underline">Read More</a>
+          </div>
+        </div>
+        <!-- Post 2 -->
+        <div class="bg-gray-50 rounded-lg overflow-hidden shadow hover:shadow-md transition">
+          <img src="blog2.jpg" alt="Blog post 2" class="w-full h-40 object-cover">
+          <div class="p-4 text-left">
+            <h3 class="text-xl font-semibold mb-2">Blog Post Title Two</h3>
+            <p class="text-gray-700 mb-4">Another short excerpt from a different blog post. It gives a glimpse of the content to encourage clicking through...</p>
+            <a href="/blog/post2" class="text-blue-600 font-medium hover:underline">Read More</a>
+          </div>
+        </div>
+        <!-- Post 3 -->
+        <div class="bg-gray-50 rounded-lg overflow-hidden shadow hover:shadow-md transition">
+          <img src="blog3.jpg" alt="Blog post 3" class="w-full h-40 object-cover">
+          <div class="p-4 text-left">
+            <h3 class="text-xl font-semibold mb-2">Blog Post Title Three</h3>
+            <p class="text-gray-700 mb-4">A third excerpt for the blog preview section. It should be intriguing enough to make users want to read more...</p>
+            <a href="/blog/post3" class="text-blue-600 font-medium hover:underline">Read More</a>
+          </div>
+        </div>
+      </div>
+      <div class="text-center mt-6">
+        <a href="/blog" class="text-blue-600 font-medium hover:underline">View All Posts</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- Contact Section -->
+  <section id="contact" class="py-16 bg-gray-100">
+    <div class="container mx-auto px-4 md:flex md:justify-between md:items-center">
+      <!-- Contact info -->
+      <div class="md:w-1/2 mb-8 md:mb-0">
+        <h2 class="text-3xl font-bold mb-4">Get in Touch</h2>
+        <p class="text-gray-700 mb-6">Have a question or want to discuss a project? Fill out the form and we'll get back to you promptly.</p>
+        <p class="text-gray-800"><strong>Email:</strong> <a href="mailto:info@company.com" class="hover:underline">info@company.com</a></p>
+        <p class="text-gray-800"><strong>Phone:</strong> (123) 456-7890</p>
+        <p class="text-gray-800"><strong>Address:</strong> 123 Business Rd, Suite 100<br>City, Country</p>
+      </div>
+      <!-- Contact form -->
+      <form class="md:w-1/2 bg-white p-6 rounded-lg shadow">
+        <div class="mb-4">
+          <label for="name" class="block text-gray-700 mb-1">Name</label>
+          <input type="text" id="name" name="name" required 
+                 class="w-full border border-gray-300 px-3 py-2 rounded focus:outline-none focus:border-blue-500" />
+        </div>
+        <div class="mb-4">
+          <label for="email" class="block text-gray-700 mb-1">Email</label>
+          <input type="email" id="email" name="email" required
+                 class="w-full border border-gray-300 px-3 py-2 rounded focus:outline-none focus:border-blue-500" />
+        </div>
+        <div class="mb-4">
+          <label for="message" class="block text-gray-700 mb-1">Message</label>
+          <textarea id="message" name="message" rows="4" required
+                    class="w-full border border-gray-300 px-3 py-2 rounded focus:outline-none focus:border-blue-500"></textarea>
+        </div>
+        <button type="submit" class="w-full bg-blue-600 text-white font-semibold py-2 px-4 rounded hover:bg-blue-700">
+          Send Message
+        </button>
+      </form>
+    </div>
+  </section>
+
+  <!-- Footer -->
+  <footer class="bg-gray-800 text-gray-300 py-8">
+    <div class="container mx-auto px-4 md:flex md:justify-between md:items-start">
+      <!-- Footer Branding / About -->
+      <div class="mb-6 md:mb-0 md:w-1/3">
+        <h3 class="text-2xl font-semibold text-white mb-2">CompanyName</h3>
+        <p class="text-gray-400">© 2025 CompanyName. All rights reserved.</p>
+        <p class="text-gray-400 mt-2">Delivering Software, Marketing & Cloud solutions that drive success.</p>
+      </div>
+      <!-- Quick Links -->
+      <div class="mb-6 md:mb-0 md:w-1/3">
+        <h4 class="text-white font-semibold mb-2">Quick Links</h4>
+        <ul>
+          <li><a href="/" class="hover:underline text-gray-300">Home</a></li>
+          <li><a href="#services" class="hover:underline text-gray-300">Services</a></li>
+          <li><a href="#about" class="hover:underline text-gray-300">About Us</a></li>
+          <li><a href="#contact" class="hover:underline text-gray-300">Contact</a></li>
+        </ul>
+      </div>
+      <!-- Social Media -->
+      <div class="md:w-1/3">
+        <h4 class="text-white font-semibold mb-2">Follow Us</h4>
+        <ul class="flex space-x-4">
+          <li><a href="#" class="text-gray-400 hover:text-white">LinkedIn</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white">Twitter</a></li>
+          <li><a href="#" class="text-gray-400 hover:text-white">Facebook</a></li>
+        </ul>
+        <!-- Optionally, a newsletter subscribe form could be here -->
+      </div>
+    </div>
+  </footer>
+
+  <!-- (Optional) Script to toggle mobile menu -->
+  <script>
+    const menuBtn = document.getElementById('menuBtn');
+    const mobileMenu = document.getElementById('mobileMenu');
+    menuBtn.addEventListener('click', () => {
+      if (mobileMenu.classList.contains('hidden')) {
+        mobileMenu.classList.remove('hidden');
+      } else {
+        mobileMenu.classList.add('hidden');
+      }
+    });
+  </script>
+</body>
+</html>
